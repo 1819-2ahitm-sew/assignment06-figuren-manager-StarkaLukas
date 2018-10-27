@@ -8,16 +8,18 @@ public class Triangle extends Figure {
     public Triangle(double side1, double side2, double angle) {
         this.side1 = side1;
         this.side2 = side2;
-        this.angle = angle;
+        this.angle = angle * (Math.PI / 180); //in Radiant umwandeln
     }
 
     @Override
     public double area() {
         double area = 0d;
-        double heightB = 0d;
+        double heightA = 0d;
 
-        heightB = side1 * Math.sin(angle);
-        area = (heightB * side2) / 2;
+        heightA = side2 * Math.sin(angle);
+
+
+        area = (side1 * heightA) / 2;
 
         return area;
     }
